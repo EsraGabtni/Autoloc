@@ -25,6 +25,11 @@ public class Maintenance {
 
     private LocalDate dateFin;
 
-    @Column(length = 255)
+    @Column(length = 500)
     private String description;
+
+    // Côté propriétaire (clé étrangère id_vehicule)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_vehicule")
+    private Vehicule vehicule;
 }
